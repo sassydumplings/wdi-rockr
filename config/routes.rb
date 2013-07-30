@@ -1,4 +1,11 @@
 WdiRockr::Application.routes.draw do
+
+    resources :venues, :only => [:new, :create]
+    resources :concerts, :only => [:new, :create]
+
+    root :to => 'static_pages#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
