@@ -1,0 +1,11 @@
+= form_for @concert do |f|
+  = f.label :artist_name
+  = f.text_field :artist_name
+
+  = f.label :performing_on
+  = f.datetime_select :performing_on
+
+  = f.label :venue_id, "Venue"
+  = f.collection_select(:venue_id, Venue.ordered, :id, :name)
+
+  = f.submit
